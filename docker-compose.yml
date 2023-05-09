@@ -1,0 +1,46 @@
+version: "3.5"
+services:
+  website-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: website:dev
+    stdin_open: true
+    tty: true
+    networks:
+      - website.net
+    container_name: "website"
+    restart: always
+    ports:
+      # Exposed ports for web traffic.
+      - "8080:8080"
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+      # Make sure that node_modules not influenced by that of the host
+      # system, by mapping to a container volume, which is persisted
+      # between container executions.
+      - reserved:/usr/app/node_modules/
+  website-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: website:prod
+    stdin_open: true
+    tty: true
+    networks:
+      - website.net
+    container_name: "website"
+    restart: always
+    ports:
+      # Exposed ports for web traffic.
+      - "8080:8080"
+
+# Named Volumes
+volumes:
+  reserved:      
+# Networks
+networks:
+  website.net:
+    name: website.net
+    driver: "bridge"

@@ -1,0 +1,13 @@
+{
+	"name": "Dev Remote",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "website-dev",
+	"workspaceFolder": "/usr/app",
+	"settings": {},
+	"extensions": [
+		"ms-azuretools.vscode-docker",
+		"aeschli.vscode-css-formatter",
+		"dbaeumer.vscode-eslint",
+		"redhat.vscode-yaml"
+	]
+}
