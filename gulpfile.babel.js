@@ -10,7 +10,7 @@ import prodConfig from "./webpack.prod.config.babel";
 
 /*
  * We're using web pack, which defines entry points.
- * We just need the main index.js file to provide gulp with a src.
+ * We just need the main express.js file to provide gulp with a src.
  */
 const paths = {
     srcFiles: [
