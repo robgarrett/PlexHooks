@@ -1,5 +1,8 @@
+/*
+ *Used for production build, the dev build used webpack-dev-server.
+ */
 import express from "express";
-import index from "./index";
+import home from "./home";
 
 const port = 8080;
 const app = express();
@@ -11,7 +14,7 @@ app.use(require("compression")());
 app.use(express.static(__dirname));
 
 // Root entry.
-app.get("/", index);
+app.get("/", home);
 
 app.listen(port, err => {
     console.log("Listening on port " + port);

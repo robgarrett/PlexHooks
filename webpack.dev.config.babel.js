@@ -4,7 +4,7 @@ import Dotenv from "dotenv-webpack";
 import common from "./webpack.common.config.babel";
 import dotenv from "dotenv";
 import webpack from "webpack";
-import index from "./src/index";
+import home from "./src/home";
 
 // Load the environment from our .env file.
 dotenv.config();
@@ -17,7 +17,7 @@ const webpackConfig = {
             if (!devServer) {
                 throw new Error("webpack-dev-server is not defined");
             }
-            devServer.app.get("/", index);
+            devServer.app.get("/", home);
             return middlewares;
         },
         open: false,

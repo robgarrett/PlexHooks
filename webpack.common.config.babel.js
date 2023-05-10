@@ -19,7 +19,7 @@ const webpackConfig = {
         children: true
     },
     entry: {
-        index: "./src/express.js"
+        express: "./src/express.js"
     },
     output: {
         // Output is the dist folder.

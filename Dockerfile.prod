@@ -1,5 +1,5 @@
 ARG ARCH=amd64
-ARG NODE_VERSION=16
+ARG NODE_VERSION=18
 ARG OS=buster-slim
 
 # Docker file to create a build image for NodeJS application.
@@ -26,10 +26,9 @@ COPY ./package*.json .
 
 # Install production dependencies.
 RUN npm ci --omit=dev
-COPY ./src/express.js .
 
 # Host on 8080
 EXPOSE 8080
 
 # Run the server.
-CMD ["node", "./express.js"]
+CMD ["node", "./express.bundle.js"]

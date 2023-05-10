@@ -1,15 +1,15 @@
 version: "3.5"
 services:
-  website-dev:
+  plexhooks-dev:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    image: website:dev
+    image: plexhooks:dev
     stdin_open: true
     tty: true
     networks:
-      - website.net
-    container_name: "website"
+      - plexhooks.net
+    container_name: "plexhooks"
     restart: always
     ports:
       # Exposed ports for web traffic.
@@ -21,16 +21,16 @@ services:
       # system, by mapping to a container volume, which is persisted
       # between container executions.
       - reserved:/usr/app/node_modules/
-  website-prod:
+  plexhooks-prod:
     build:
       context: .
       dockerfile: Dockerfile.prod
-    image: website:prod
+    image: plexhooks:prod
     stdin_open: true
     tty: true
     networks:
-      - website.net
-    container_name: "website"
+      - plexhooks.net
+    container_name: "plexhooks"
     restart: always
     ports:
       # Exposed ports for web traffic.
@@ -41,6 +41,6 @@ volumes:
   reserved:      
 # Networks
 networks:
-  website.net:
-    name: website.net
+  plexhooks.net:
+    name: plexhooks.net
     driver: "bridge"

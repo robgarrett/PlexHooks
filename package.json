@@ -2,7 +2,7 @@
   "name": "plexhooks",
   "version": "1.0.0",
   "description": "Host for Plex Web Hooks",
-  "main": "index.js",
+  "main": "express.js",
   "author": "Rob Garrett",
   "license": "UNLICENSED",
   "repository": "https://github.com/robgarrett/PlexHooks",
@@ -22,7 +22,6 @@
     "browser-sync": "^2.27.9",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
     "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.11.0",
@@ -38,7 +37,6 @@
   },
   "dependencies": {
     "compression": "^1.7.4",
-    "express": "^4.17.3",
-    "express-http-proxy": "^1.6.3"
+    "express": "^4.17.3"
   }
 }

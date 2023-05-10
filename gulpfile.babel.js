@@ -14,7 +14,7 @@ import prodConfig from "./webpack.prod.config.babel";
  */
 const paths = {
     srcFiles: [
-        "src/index.js"
+        "src/express.js"
     ],
     destFolder: "./dist"
 };
