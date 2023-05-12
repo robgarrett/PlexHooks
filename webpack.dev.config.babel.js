@@ -20,6 +20,7 @@ const webpackConfig = {
             devServer.app.get("/", home);
             return middlewares;
         },
+        hot: false,
         open: false,
         client: {
             logging: "verbose"

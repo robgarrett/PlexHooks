@@ -4,7 +4,6 @@ import webpack from "webpack";
 import webpackStream from "webpack-stream";
 import WebPackDevServer from "webpack-dev-server";
 import clean from "gulp-clean";
-import os from "os";
 import devConfig from "./webpack.dev.config.babel";
 import prodConfig from "./webpack.prod.config.babel";
 
@@ -18,8 +17,6 @@ const paths = {
     ],
     destFolder: "./dist"
 };
-
-const browser = os.platform() === "win32" ? "msedge" : "google-chrome";
 
 gulp.task("clean", () => gulp.src([
     paths.destFolder
