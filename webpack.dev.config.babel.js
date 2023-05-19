@@ -1,10 +1,11 @@
-import BrowserSyncPlugin from "browser-sync-webpack-plugin";
 import merge from "webpack-merge";
 import Dotenv from "dotenv-webpack";
 import common from "./webpack.common.config.babel";
 import dotenv from "dotenv";
 import webpack from "webpack";
 import home from "./src/home";
+import webhook from "./src/webhook";
+import express from "express";
 
 // Load the environment from our .env file.
 dotenv.config();
@@ -17,7 +18,13 @@ const webpackConfig = {
             if (!devServer) {
                 throw new Error("webpack-dev-server is not defined");
             }
+            // Parse application/x-www-form-urlencoded
+            devServer.app.use(express.urlencoded({ extended: false }));
+            // Parse application/json
+            devServer.app.use(express.json());
+            // Handlers
             devServer.app.get("/", home);
+            devServer.app.post("/", webhook);
             return middlewares;
         },
         hot: false,
@@ -33,12 +40,6 @@ const webpackConfig = {
     },
     plugins: [
         new Dotenv(),
-        new BrowserSyncPlugin({
-            host: "localhost",
-            port: 3000,
-            open: false,
-            proxy: "http://localhost:8080/"
-        }),
         new webpack.BannerPlugin(
             "require('source-map-support').install();",
             {
