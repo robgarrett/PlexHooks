@@ -47,5 +47,5 @@ gulp.task("devServer", done => {
 
 gulp.task("build", gulp.series("clean", "compile:dev"));
 gulp.task("package", gulp.series("clean", "compile:prod"));
-gulp.task("serve", gulp.series("build", "devServer"));
+gulp.task("serve", gulp.series("clean", "devServer"));
 gulp.task("default", gulp.series("serve"));
