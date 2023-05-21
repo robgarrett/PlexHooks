@@ -4,14 +4,13 @@
 import express from "express";
 import home from "./home";
 import webhook from "./webhook";
+import multer from "multer";
+
 const port = 8080;
 const app = express();
 
-// Parse application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: false }));
-
-// Parse application/json
-app.use(express.json());
+// In memory parsing of multi-form data.
+const upload = multer();
 
 // Use compression in production.
 app.use(require("compression")());
@@ -21,7 +20,7 @@ app.use(express.static(__dirname));
 
 // Handlers.
 app.get("/", home);
-app.post("/", webhook);
+app.post("/", upload.single("thumb"), webhook);
 
 app.listen(port, err => {
     console.log("Listening on port " + port);

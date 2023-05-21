@@ -1,14 +1,17 @@
 import merge from "webpack-merge";
 import Dotenv from "dotenv-webpack";
+import multer from "multer";
 import common from "./webpack.common.config.babel";
 import dotenv from "dotenv";
 import webpack from "webpack";
 import home from "./src/home";
 import webhook from "./src/webhook";
-import express from "express";
 
 // Load the environment from our .env file.
 dotenv.config();
+
+// In memory parsing of multi-form data.
+const upload = multer();
 
 const webpackConfig = {
     mode: "development",
@@ -18,13 +21,9 @@ const webpackConfig = {
             if (!devServer) {
                 throw new Error("webpack-dev-server is not defined");
             }
-            // Parse application/x-www-form-urlencoded
-            devServer.app.use(express.urlencoded({ extended: false }));
-            // Parse application/json
-            devServer.app.use(express.json());
             // Handlers
             devServer.app.get("/", home);
-            devServer.app.post("/", webhook);
+            devServer.app.post("/", upload.single("thumb"), webhook);
             return middlewares;
         },
         hot: false,
