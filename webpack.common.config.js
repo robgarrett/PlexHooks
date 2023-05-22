@@ -2,6 +2,10 @@ import ESLintPlugin from "eslint-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import path from "path";
 import fs from "fs";
+import url from "url";
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Exclude node_modules from server-side bundling.
 const nodeModules = {};

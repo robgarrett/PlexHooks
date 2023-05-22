@@ -1,11 +1,11 @@
-import merge from "webpack-merge";
+import { merge } from "webpack-merge";
 import Dotenv from "dotenv-webpack";
 import multer from "multer";
-import common from "./webpack.common.config.babel";
+import common from "./webpack.common.config.js";
 import dotenv from "dotenv";
 import webpack from "webpack";
-import home from "./src/home";
-import webhook from "./src/webhook";
+import home from "./src/home.js";
+import webhook from "./src/webhook.js";
 
 // Load the environment from our .env file.
 dotenv.config();

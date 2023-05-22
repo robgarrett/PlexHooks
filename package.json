@@ -6,19 +6,19 @@
   "author": "Rob Garrett",
   "license": "UNLICENSED",
   "repository": "https://github.com/robgarrett/PlexHooks",
+  "type": "module",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "scripts": {
+    "lint": "gulp lint",
     "build": "gulp build",
     "clean": "gulp clean",
     "start": "gulp serve",
     "package": "gulp package"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.7",
-    "@babel/node": "^7.20.2",
-    "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "babel-loader": "^9.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",
@@ -27,10 +27,11 @@
     "eslint-webpack-plugin": "^4.0.1",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
+    "gulp-eslint": "^6.0.0",
     "source-map-support": "^0.5.21",
     "webpack": "^5.74.0",
     "webpack-dev-server": "^4.7.4",
-    "webpack-merge": "^5.8.0",
+    "webpack-merge": "^5.9.0",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {

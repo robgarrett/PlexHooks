@@ -4,8 +4,9 @@ import webpack from "webpack";
 import webpackStream from "webpack-stream";
 import WebPackDevServer from "webpack-dev-server";
 import clean from "gulp-clean";
-import devConfig from "./webpack.dev.config.babel";
-import prodConfig from "./webpack.prod.config.babel";
+import eslint from "gulp-eslint";
+import devConfig from "./webpack.dev.config.js";
+import prodConfig from "./webpack.prod.config.js";
 
 /*
  * We're using web pack, which defines entry points.
@@ -13,8 +14,10 @@ import prodConfig from "./webpack.prod.config.babel";
  */
 const paths = {
     srcFiles: [
-        "src/express.js"
+        "src/**/*.js",
+        "src/**/*.mjs"
     ],
+    entryFile: "src/express.js",
     destFolder: "./dist"
 };
 
@@ -25,16 +28,21 @@ gulp.task("clean", () => gulp.src([
     allowEmpty: true
 }).pipe(clean()));
 
+gulp.task("lint", () => gulp.src(paths.srcFiles).
+    pipe(eslint()).
+    pipe(eslint.format()).
+    pipe(eslint.failAfterError()));
+
 gulp.task("compile:dev", () => {
     env.NODE_ENV = "development";
-    return gulp.src(paths.srcFiles).
+    return gulp.src(paths.entryFile).
         pipe(webpackStream(devConfig)).
         pipe(gulp.dest(paths.destFolder));
 });
 
 gulp.task("compile:prod", () => {
     env.NODE_ENV = "production";
-    return gulp.src(paths.srcFiles).
+    return gulp.src(paths.entryFile).
         pipe(webpackStream(prodConfig)).
         pipe(gulp.dest(paths.destFolder));
 });
