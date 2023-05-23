@@ -7,14 +7,10 @@
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2021,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": [
-    ],
+    "plugins": [],
     "rules": {
         "accessor-pairs": "error",
         "array-bracket-newline": "off",

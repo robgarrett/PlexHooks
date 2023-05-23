@@ -11,11 +11,6 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "overrides": {
-    "gulp-eslint": {
-      "eslint": "7"
-    }
-  },
   "scripts": {
     "lint": "gulp lint",
     "build": "gulp build",
@@ -31,7 +26,7 @@
     "eslint-webpack-plugin": "^4.0.1",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
-    "gulp-eslint": "^6.0.0",
+    "gulp-eslint-new": "^1.8.0",
     "source-map-support": "^0.5.21",
     "webpack": "^5.74.0",
     "webpack-dev-server": "^4.7.4",
@@ -39,6 +34,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "compression": "^1.7.4",
     "express": "^4.17.3",
     "multer": "^2.0.0-rc.4",
