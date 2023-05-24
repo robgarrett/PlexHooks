@@ -4,9 +4,10 @@ import webpack from "webpack";
 import webpackStream from "webpack-stream";
 import WebPackDevServer from "webpack-dev-server";
 import clean from "gulp-clean";
+import path from "path";
 import eslint from "gulp-eslint-new";
-import devConfig from "./webpack.dev.config.js";
-import prodConfig from "./webpack.prod.config.js";
+import devConfig from "./webpack.dev.config.babel";
+import prodConfig from "./webpack.prod.config.babel";
 
 /*
  * We're using web pack, which defines entry points.

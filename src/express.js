@@ -2,10 +2,10 @@
  *Used for production build, the dev build used webpack-dev-server.
  */
 import express from "express";
-import home from "./home.js";
-import webhook from "./webhook.js";
 import multer from "multer";
 import compression from "compression";
+import home from "./home";
+import webhook from "./webhook";
 
 const port = 8080;
 const app = express();

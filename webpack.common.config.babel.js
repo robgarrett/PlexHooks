@@ -2,19 +2,13 @@ import ESLintPlugin from "eslint-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import path from "path";
 import fs from "fs";
-import url from "url";
-
-// eslint-disable-next-line no-underscore-dangle
-const __filename = url.fileURLToPath(import.meta.url);
-// eslint-disable-next-line no-underscore-dangle
-const __dirname = path.dirname(__filename);
 
 // Exclude node_modules from server-side bundling.
 const nodeModules = {};
 fs.readdirSync("node_modules").
     filter(x => [".bin"].indexOf(x) === -1).
     forEach(mod => {
-        nodeModules[mod] = "import " + mod;
+        nodeModules[mod] = "commonjs " + mod;
     });
 
 const webpackConfig = {
@@ -28,27 +22,43 @@ const webpackConfig = {
         express: "./src/express.js"
     },
     experiments: {
-        outputModule: true
+        outputModule: false
     },
     output: {
         // Output is the dist folder.
         path: path.resolve(__dirname, "dist"),
         filename: "[name].bundle.js",
         chunkFilename: "[name].bundle.js",
-        publicPath: "/",
+        publicPath: "/dist",
         library: {
-            type: "module"
+            type: "commonjs"
         }
     },
     target: "node12.2",
-    devServer: {
-        static: `${__dirname}/dist/`,
-        devMiddleware: {
-            writeToDisk: true
-        }
-    },
     externals: nodeModules,
-    module: {},
+    module: {
+        rules: [
+            {
+                test: /\.js$/i,
+                exclude: [
+                    /node_modules/
+                ],
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            [
+                                "@babel/preset-env",
+                                {
+                                    "modules": "commonjs"
+                                }
+                            ]
+                        ]
+                    }
+                }
+            }
+        ]
+    },
     plugins: [
         new CleanWebpackPlugin({
             verbose: true
