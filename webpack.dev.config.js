@@ -4,6 +4,7 @@ import multer from "multer";
 import common from "./webpack.common.config.js";
 import dotenv from "dotenv";
 import webpack from "webpack";
+import express from "express";
 import home from "./src/home.js";
 import webhook from "./src/webhook.js";
 
@@ -21,6 +22,10 @@ const webpackConfig = {
             if (!devServer) {
                 throw new Error("webpack-dev-server is not defined");
             }
+            // Parsers.
+            devServer.app.use(express.json());
+            devServer.app.use(express.urlencoded({ extended: true }));
+
             // Handlers
             devServer.app.get("/", home);
             devServer.app.post("/", upload.single("thumb"), webhook);
