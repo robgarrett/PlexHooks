@@ -1,6 +1,6 @@
 /* eslint-disable no-process-env */
 import { merge } from "webpack-merge";
-import common from "./webpack.common.config.babel";
+import common from "./webpack.common.config.js";
 import webpack from "webpack";
 
 const webpackConfig = {

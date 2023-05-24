@@ -2,13 +2,17 @@ import ESLintPlugin from "eslint-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
+
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Exclude node_modules from server-side bundling.
 const nodeModules = {};
 fs.readdirSync("node_modules").
     filter(x => [".bin"].indexOf(x) === -1).
     forEach(mod => {
-        nodeModules[mod] = "commonjs " + mod;
+        nodeModules[mod] = "module " + mod;
     });
 
 const webpackConfig = {
@@ -22,7 +26,7 @@ const webpackConfig = {
         express: "./src/express.js"
     },
     experiments: {
-        outputModule: false
+        outputModule: true
     },
     output: {
         // Output is the dist folder.
@@ -31,33 +35,12 @@ const webpackConfig = {
         chunkFilename: "[name].bundle.js",
         publicPath: "/dist",
         library: {
-            type: "commonjs"
+            type: "module"
         }
     },
     target: "node12.2",
     externals: nodeModules,
     module: {
-        rules: [
-            {
-                test: /\.js$/i,
-                exclude: [
-                    /node_modules/
-                ],
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            [
-                                "@babel/preset-env",
-                                {
-                                    "modules": "commonjs"
-                                }
-                            ]
-                        ]
-                    }
-                }
-            }
-        ]
     },
     plugins: [
         new CleanWebpackPlugin({

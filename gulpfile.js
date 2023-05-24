@@ -4,8 +4,8 @@ import webpackStream from "webpack-stream";
 import clean from "gulp-clean";
 import eslint from "gulp-eslint-new";
 import nodemon from "gulp-nodemon";
-import devConfig from "./webpack.dev.config.babel";
-import prodConfig from "./webpack.prod.config.babel";
+import devConfig from "./webpack.dev.config.js";
+import prodConfig from "./webpack.prod.config.js";
 
 /*
  * We're using web pack, which defines entry points.

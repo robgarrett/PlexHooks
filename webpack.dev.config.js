@@ -1,6 +1,6 @@
 import { merge } from "webpack-merge";
 import Dotenv from "dotenv-webpack";
-import common from "./webpack.common.config.babel";
+import common from "./webpack.common.config.js";
 import dotenv from "dotenv";
 import webpack from "webpack";
 

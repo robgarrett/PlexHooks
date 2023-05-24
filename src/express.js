@@ -1,8 +1,13 @@
 import express from "express";
 import multer from "multer";
 import compression from "compression";
-import home from "./home";
-import webhook from "./webhook";
+import home from "./home.js";
+import webhook from "./webhook.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const port = 8080;
 const app = express();

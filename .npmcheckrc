@@ -1,9 +1,7 @@
 {
     "depcheck": {
         "ignoreMatches": [
-            "source-map-support",
-            "babel-loader",
-            "@babel/node"
+            "source-map-support"
         ]
     }
 }
