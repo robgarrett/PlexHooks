@@ -1,50 +1,15 @@
 import { merge } from "webpack-merge";
 import Dotenv from "dotenv-webpack";
-import multer from "multer";
 import common from "./webpack.common.config.babel";
 import dotenv from "dotenv";
 import webpack from "webpack";
-import express from "express";
-import home from "./src/home";
-import webhook from "./src/webhook";
 
 // Load the environment from our .env file.
 dotenv.config();
 
-// In memory parsing of multi-form data.
-const upload = multer();
-
 const webpackConfig = {
     mode: "development",
     devtool: "source-map",
-    devServer: {
-        devMiddleware: {
-            writeToDisk: true
-        },
-        setupMiddlewares: (middlewares, devServer) => {
-            if (!devServer) {
-                throw new Error("webpack-dev-server is not defined");
-            }
-            // Parsers.
-            devServer.app.use(express.json());
-            devServer.app.use(express.urlencoded({ extended: true }));
-
-            // Handlers
-            devServer.app.get("/", home);
-            devServer.app.post("/", upload.single("thumb"), webhook);
-            return middlewares;
-        },
-        hot: false,
-        open: false,
-        client: {
-            logging: "verbose"
-        },
-        historyApiFallback: true,
-        watchFiles: [
-            "src/**/*.js",
-            "*.js"
-        ]
-    },
     plugins: [
         new Dotenv(),
         new webpack.BannerPlugin(

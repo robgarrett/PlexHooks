@@ -1,6 +1,3 @@
-/*
- *Used for production build, the dev build used webpack-dev-server.
- */
 import express from "express";
 import multer from "multer";
 import compression from "compression";

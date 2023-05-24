@@ -1,11 +1,9 @@
 import gulp from "gulp";
 import { env } from "process";
-import webpack from "webpack";
 import webpackStream from "webpack-stream";
-import WebPackDevServer from "webpack-dev-server";
 import clean from "gulp-clean";
-import path from "path";
 import eslint from "gulp-eslint-new";
+import nodemon from "gulp-nodemon";
 import devConfig from "./webpack.dev.config.babel";
 import prodConfig from "./webpack.prod.config.babel";
 
@@ -15,11 +13,11 @@ import prodConfig from "./webpack.prod.config.babel";
  */
 const paths = {
     srcFiles: [
-        "src/**/*.js",
-        "src/**/*.mjs"
+        "src/**/*.js"
     ],
     entryFile: "src/express.js",
-    destFolder: "./dist"
+    destFolder: "./dist",
+    bundledScript: "./dist/express.bundle.js"
 };
 
 gulp.task("clean", () => gulp.src([
@@ -49,9 +47,18 @@ gulp.task("compile:prod", () => {
 });
 
 gulp.task("devServer", done => {
-    const config = Object.assign(devConfig, {});
-    new WebPackDevServer(config.devServer, webpack(config)).start();
-    done();
+    nodemon({
+        script: paths.bundledScript,
+        ext: "js",
+        env: { "NODE_ENV": "development" },
+        tasks: ["lint",
+            "compile:dev"],
+        ignore: ["node_modules/"],
+        watch: paths.srcFiles,
+        done
+    }).on("restart", () => {
+        console.log("Nodemon restarted");
+    });
 });
 
 gulp.task("build", gulp.series("clean", "lint", "compile:dev"));
