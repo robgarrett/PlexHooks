@@ -41,6 +41,9 @@ const webpackConfig = {
     target: "node12.2",
     externals: nodeModules,
     module: {
+        parser: {
+            javascript: { importMeta: false }
+        }
     },
     plugins: [
         new CleanWebpackPlugin({
