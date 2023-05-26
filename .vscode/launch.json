@@ -17,7 +17,7 @@
             "skipFiles": [
                 "<node_internals>/**/*.js"
             ],
-            "killBehavior": "polite",
+            "killBehavior": "forceful",
         }
     ]
 }

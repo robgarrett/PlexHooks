@@ -1,5 +1,5 @@
 {
-    "event": "media.play",
+    "event": "media.scrobble",
     "user": true,
     "owner": true,
     "Account": {

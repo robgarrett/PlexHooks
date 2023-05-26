@@ -46,9 +46,6 @@ const webpackConfig = {
         }
     },
     plugins: [
-        new CleanWebpackPlugin({
-            verbose: true
-        }),
         new ESLintPlugin()
     ]
 };
