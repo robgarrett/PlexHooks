@@ -9,7 +9,7 @@
     },
     "Server": {
         "title": "ROBDEV-MEDIA",
-        "uuid": "89fd6e50ac786555766d529dd17501af3c03231e"
+        "uuid": ""
     },
     "Player": {
         "local": true,
@@ -18,43 +18,40 @@
         "uuid": "0a4e0shrv9ngdk84orqtqsgv"
     },
     "Metadata": {
-        "librarySectionType": "movie",
-        "ratingKey": "2953",
-        "key": "/library/metadata/2953",
-        "guid": "com.plexapp.agents.none://ab492039426586183fa74aeccaf4c0714e43de2e?lang=xn",
-        "type": "movie",
-        "title": "Wedding Vignette",
-        "librarySectionTitle": "Home Movies",
-        "librarySectionID": 11,
-        "librarySectionKey": "/library/sections/11",
-        "subtype": "clip",
-        "summary": "",
-        "viewCount": 11,
-        "skipCount": 1,
-        "lastViewedAt": 1686348659,
-        "year": 2012,
-        "thumb": "/library/metadata/2953/thumb/1684825079",
-        "art": "/library/metadata/2953/art/1684825079",
-        "originallyAvailableAt": "2012-01-01",
-        "addedAt": 1360526850,
-        "updatedAt": 1684825079,
-        "createdAtAccuracy": "epoch,local",
-        "createdAtTZOffset": "0",
-        "Genre": [
+        "librarySectionType": "show",
+        "ratingKey": "30882",
+        "key": "/library/metadata/30882",
+        "parentRatingKey": "30664",
+        "grandparentRatingKey": "30611",
+        "guid": "plex://episode/64161e6eaa8dcba1fc8dbbe2",
+        "parentGuid": "plex://season/63b2de4a6bdd1b62d1a60489",
+        "grandparentGuid": "plex://show/5d9c0876ec357c001f9ad189",
+        "type": "episode",
+        "title": "Wednesday 22nd March 2023",
+        "grandparentKey": "/library/metadata/30611",
+        "parentKey": "/library/metadata/30664",
+        "librarySectionTitle": "TV Shows",
+        "librarySectionID": 9,
+        "librarySectionKey": "/library/sections/9",
+        "grandparentTitle": "Emmerdale",
+        "parentTitle": "Season 52",
+        "contentRating": "TV-PG",
+        "summary": "Alex plans his robbery. Moira has some questions for Mack. Paddy gets a lovely offer.",
+        "index": 57,
+        "parentIndex": 52,
+        "viewCount": 2,
+        "lastViewedAt": 1686349212,
+        "year": 2023,
+        "thumb": "/library/metadata/30882/thumb/1685776056",
+        "art": "/library/metadata/30611/art/1684564011",
+        "grandparentThumb": "/library/metadata/30611/thumb/1684564011",
+        "grandparentArt": "/library/metadata/30611/art/1684564011",
+        "originallyAvailableAt": "2023-03-22",
+        "addedAt": 1682296322,
+        "updatedAt": 1685776056,
+        "Guid": [
             {
-                "id": 3038,
-                "filter": "genre=3038",
-                "tag": "Home Movie",
-                "count": 4
-            }
-        ],
-        "Role": [
-            {
-                "id": 3039,
-                "filter": "actor=3039",
-                "tag": "Perski Video",
-                "count": 3,
-                "role": ""
+                "id": "tvdb://9677205"
             }
         ]
     }

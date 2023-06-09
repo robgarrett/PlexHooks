@@ -13,12 +13,13 @@ const getEpisode = async ratingKey => {
     }).
         then(response => response).
         catch(err => console.log(err));
+    console.log(JSON.stringify(res.data));
     return res.data;
 };
 
 const processMediaItemAsync = async item => {
     // We only process TV shows because I don't want my movies disappearing :)
-    if (null !== item && item.Metadata.type !== "episode") {
+    if (null !== item && item.Metadata.type === "episode") {
         console.log("Processing media item " + item.Metadata.ratingKey);
         // Get the episode details from plex server.
         const episode = await getEpisode(item.Metadata.ratingKey);
@@ -30,11 +31,9 @@ const processMediaItemAsync = async item => {
             if (typeof viewCount !== "undefined" && viewCount >= 1) {
                 // Find the location on disk.
                 metadata.Media.forEach(media => {
-                    if (typeof media.videoProfile !== "undefined" && media.videoProfile === "main") {
-                        media.Part.forEach(part => {
-                            console.log(`Found an episode part ready for delation: ${part.file}`);
-                        });
-                    }
+                    media.Part.forEach(part => {
+                        console.log(`Found an episode part ready for delation: ${part.file}`);
+                    });
                 });
             }
         } else {
@@ -50,8 +49,8 @@ export default async (req, res) => {
     } else {
         try {
             const payload = JSON.parse(req.body.payload);
-            console.log(JSON.stringify(payload));
             console.log("Got webhook for", payload.event);
+            console.log(JSON.stringify(payload));
             const ratingKey = payload.Metadata.ratingKey;
             if (payload.event === "media.scrobble") {
                 // Get reference to the database and store payload.
