@@ -1,50 +1,61 @@
 {
-    "librarySectionType": "movie",
-    "ratingKey": "2951",
-    "key": "/library/metadata/2951",
-    "guid": "com.plexapp.agents.none://fb623bd565a7790b850918636b393f29479b93c1?lang=xn",
-    "type": "movie",
-    "title": "Wedding Picture Montage",
-    "librarySectionTitle": "Home Movies",
-    "librarySectionID": 11,
-    "librarySectionKey": "/library/sections/11",
-    "subtype": "clip",
-    "summary": "",
-    "viewCount": 1,
-    "lastViewedAt": 1686334857,
-    "year": 2012,
-    "thumb": "/library/metadata/2951/thumb/1682785232",
-    "art": "/library/metadata/2951/art/1682785232",
-    "originallyAvailableAt": "2012-05-06",
-    "addedAt": 1360526848,
-    "updatedAt": 1682785232,
-    "createdAtAccuracy": "epoch,local",
-    "createdAtTZOffset": "0",
-    "Genre": [
-        {
-            "id": 3038,
-            "filter": "genre=3038",
-            "tag": "Home Movie",
-            "count": 4
-        }
-    ],
-    "Role": [
-        {
-            "id": 3039,
-            "filter": "actor=3039",
-            "tag": "Perski Video",
-            "count": 3,
-            "role": ""
-        }
-    ],
-    "Field": [
-        {
-            "locked": true,
-            "name": "originallyAvailableAt"
-        },
-        {
-            "locked": true,
-            "name": "year"
-        }
-    ]
+    "event": "media.scrobble",
+    "user": false,
+    "owner": true,
+    "Account": {
+        "id": 19957127,
+        "thumb": "https://plex.tv/users/93af22bef80ff1b8/avatar?c=1661346110",
+        "title": "Plex User"
+    },
+    "Server": {
+        "title": "ROBDEV-MEDIA",
+        "uuid": "89fd6e50ac786555766d529dd17501af3c03231e"
+    },
+    "Player": {
+        "local": true,
+        "publicAddress": "108.56.225.55",
+        "title": "Microsoft Edge",
+        "uuid": "0a4e0shrv9ngdk84orqtqsgv"
+    },
+    "Metadata": {
+        "librarySectionType": "movie",
+        "ratingKey": "2953",
+        "key": "/library/metadata/2953",
+        "guid": "com.plexapp.agents.none://ab492039426586183fa74aeccaf4c0714e43de2e?lang=xn",
+        "type": "movie",
+        "title": "Wedding Vignette",
+        "librarySectionTitle": "Home Movies",
+        "librarySectionID": 11,
+        "librarySectionKey": "/library/sections/11",
+        "subtype": "clip",
+        "summary": "",
+        "viewCount": 11,
+        "skipCount": 1,
+        "lastViewedAt": 1686348659,
+        "year": 2012,
+        "thumb": "/library/metadata/2953/thumb/1684825079",
+        "art": "/library/metadata/2953/art/1684825079",
+        "originallyAvailableAt": "2012-01-01",
+        "addedAt": 1360526850,
+        "updatedAt": 1684825079,
+        "createdAtAccuracy": "epoch,local",
+        "createdAtTZOffset": "0",
+        "Genre": [
+            {
+                "id": 3038,
+                "filter": "genre=3038",
+                "tag": "Home Movie",
+                "count": 4
+            }
+        ],
+        "Role": [
+            {
+                "id": 3039,
+                "filter": "actor=3039",
+                "tag": "Perski Video",
+                "count": 3,
+                "role": ""
+            }
+        ]
+    }
 }

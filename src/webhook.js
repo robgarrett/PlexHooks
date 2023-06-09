@@ -18,8 +18,7 @@ const getEpisode = async ratingKey => {
 
 const processMediaItemAsync = async item => {
     // We only process TV shows because I don't want my movies disappearing :)
-    // eslint-disable-next-line no-inline-comments
-    if (null !== item /* && item.Metadata.type !== "episode" */) {
+    if (null !== item && item.Metadata.type !== "episode") {
         console.log("Processing media item " + item.Metadata.ratingKey);
         // Get the episode details from plex server.
         const episode = await getEpisode(item.Metadata.ratingKey);
