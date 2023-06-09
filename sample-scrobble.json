@@ -1,0 +1,50 @@
+{
+    "librarySectionType": "movie",
+    "ratingKey": "2951",
+    "key": "/library/metadata/2951",
+    "guid": "com.plexapp.agents.none://fb623bd565a7790b850918636b393f29479b93c1?lang=xn",
+    "type": "movie",
+    "title": "Wedding Picture Montage",
+    "librarySectionTitle": "Home Movies",
+    "librarySectionID": 11,
+    "librarySectionKey": "/library/sections/11",
+    "subtype": "clip",
+    "summary": "",
+    "viewCount": 1,
+    "lastViewedAt": 1686334857,
+    "year": 2012,
+    "thumb": "/library/metadata/2951/thumb/1682785232",
+    "art": "/library/metadata/2951/art/1682785232",
+    "originallyAvailableAt": "2012-05-06",
+    "addedAt": 1360526848,
+    "updatedAt": 1682785232,
+    "createdAtAccuracy": "epoch,local",
+    "createdAtTZOffset": "0",
+    "Genre": [
+        {
+            "id": 3038,
+            "filter": "genre=3038",
+            "tag": "Home Movie",
+            "count": 4
+        }
+    ],
+    "Role": [
+        {
+            "id": 3039,
+            "filter": "actor=3039",
+            "tag": "Perski Video",
+            "count": 3,
+            "role": ""
+        }
+    ],
+    "Field": [
+        {
+            "locked": true,
+            "name": "originallyAvailableAt"
+        },
+        {
+            "locked": true,
+            "name": "year"
+        }
+    ]
+}

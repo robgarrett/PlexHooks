@@ -1,6 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import Datastore from "nedb";
+import { AsyncNedb } from "nedb-async";
 
 const constructorLock = Symbol("Constructor lock");
 const singletonInstance = Symbol("Database instance");
@@ -25,7 +26,7 @@ export default class Database {
             // Create a new instance of the Database singleton.
             this[singletonInstance] = new Database(constructorLock);
             // Provision the database if not exists.
-            this[singletonInstance].db = new Datastore({
+            this[singletonInstance].db = new AsyncNedb({
                 filename: path.join(__dirname, "datastore.dat"),
                 autoload: true
             });

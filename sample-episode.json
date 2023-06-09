@@ -1,0 +1,133 @@
+{
+    "MediaContainer": {
+        "size": 1,
+        "allowSync": true,
+        "identifier": "com.plexapp.plugins.library",
+        "librarySectionID": 9,
+        "librarySectionTitle": "TV Shows",
+        "librarySectionUUID": "81b423db-bb73-499c-a0c1-79d2ca068821",
+        "mediaTagPrefix": "/system/bundle/media/flags/",
+        "mediaTagVersion": 1685992188,
+        "Metadata": [
+            {
+                "ratingKey": "30883",
+                "key": "/library/metadata/30883",
+                "parentRatingKey": "30664",
+                "grandparentRatingKey": "30611",
+                "guid": "plex://episode/64161e6faa8dcba1fc8dbbe3",
+                "parentGuid": "plex://season/63b2de4a6bdd1b62d1a60489",
+                "grandparentGuid": "plex://show/5d9c0876ec357c001f9ad189",
+                "type": "episode",
+                "title": "Thursday 23rd March 2023",
+                "grandparentKey": "/library/metadata/30611",
+                "parentKey": "/library/metadata/30664",
+                "librarySectionTitle": "TV Shows",
+                "librarySectionID": 9,
+                "librarySectionKey": "/library/sections/9",
+                "grandparentTitle": "Emmerdale",
+                "parentTitle": "Season 52",
+                "contentRating": "TV-PG",
+                "summary": "Moira reveals the theme for the Stag and Hen do. Dan's determined to help Amelia. Liam might have bitten off more than he can chew.",
+                "index": 58,
+                "parentIndex": 52,
+                "year": 2023,
+                "thumb": "/library/metadata/30883/thumb/1685776056",
+                "art": "/library/metadata/30611/art/1684564011",
+                "grandparentThumb": "/library/metadata/30611/thumb/1684564011",
+                "grandparentArt": "/library/metadata/30611/art/1684564011",
+                "duration": 2684160,
+                "originallyAvailableAt": "2023-03-23",
+                "addedAt": 1682296322,
+                "updatedAt": 1685776056,
+                "Media": [
+                    {
+                        "id": 42160,
+                        "duration": 2684160,
+                        "bitrate": 1110,
+                        "width": 896,
+                        "height": 504,
+                        "aspectRatio": 1.78,
+                        "audioChannels": 2,
+                        "audioCodec": "aac",
+                        "videoCodec": "h264",
+                        "videoResolution": "480",
+                        "container": "mp4",
+                        "videoFrameRate": "PAL",
+                        "optimizedForStreaming": 1,
+                        "audioProfile": "lc",
+                        "has64bitOffsets": false,
+                        "videoProfile": "high",
+                        "Part": [
+                            {
+                                "id": 45772,
+                                "key": "/library/parts/45772/1682295564/file.mp4",
+                                "duration": 2684160,
+                                "file": "T:\\TV\\Emmerdale\\Emmerdale_S52E58_2023-03-23_504p.HDTV.x264-SS.mp4",
+                                "size": 374693942,
+                                "audioProfile": "lc",
+                                "container": "mp4",
+                                "has64bitOffsets": false,
+                                "optimizedForStreaming": true,
+                                "videoProfile": "high",
+                                "Stream": [
+                                    {
+                                        "id": 98207,
+                                        "streamType": 1,
+                                        "default": true,
+                                        "codec": "h264",
+                                        "index": 0,
+                                        "bitrate": 987,
+                                        "bitDepth": 8,
+                                        "chromaLocation": "left",
+                                        "chromaSubsampling": "4:2:0",
+                                        "codedHeight": 512,
+                                        "codedWidth": 896,
+                                        "colorPrimaries": "bt709",
+                                        "colorRange": "tv",
+                                        "colorSpace": "bt709",
+                                        "colorTrc": "bt709",
+                                        "frameRate": 25.0,
+                                        "hasScalingMatrix": false,
+                                        "height": 504,
+                                        "level": 31,
+                                        "profile": "high",
+                                        "refFrames": 5,
+                                        "scanType": "progressive",
+                                        "streamIdentifier": "1",
+                                        "width": 896,
+                                        "displayTitle": "480p (H.264)",
+                                        "extendedDisplayTitle": "480p (H.264)"
+                                    },
+                                    {
+                                        "id": 98208,
+                                        "streamType": 2,
+                                        "selected": true,
+                                        "default": true,
+                                        "codec": "aac",
+                                        "index": 1,
+                                        "channels": 2,
+                                        "bitrate": 124,
+                                        "language": "English",
+                                        "languageTag": "en",
+                                        "languageCode": "eng",
+                                        "audioChannelLayout": "stereo",
+                                        "profile": "lc",
+                                        "samplingRate": 48000,
+                                        "streamIdentifier": "2",
+                                        "displayTitle": "English (AAC Stereo)",
+                                        "extendedDisplayTitle": "English (AAC Stereo)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "Guid": [
+                    {
+                        "id": "tvdb://9677206"
+                    }
+                ]
+            }
+        ]
+    }
+}

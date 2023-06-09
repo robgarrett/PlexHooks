@@ -1,5 +1,5 @@
 import ESLintPlugin from "eslint-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
@@ -46,7 +46,15 @@ const webpackConfig = {
         }
     },
     plugins: [
-        new ESLintPlugin()
+        new ESLintPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: "./appSettings.json",
+                    to: path.join(__dirname, "dist")
+                }
+            ]
+        })
     ]
 };
 
